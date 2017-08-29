@@ -10,10 +10,7 @@ before_install:
   - sudo service docker restart
   - sleep 5
   - sudo docker pull davidva/unibuild-28
-script:
-echo 'BUILD INIT'
-
-after_script:
+install:
 - rm -f urpms
 - wget -c https://raw.githubusercontent.com/kuboosoft/united-build/master/urpms
 - chmod a+x urpms
