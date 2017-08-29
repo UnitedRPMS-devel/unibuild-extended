@@ -3,6 +3,12 @@ language: generic
 sudo: required
 services:
 - docker
+before_install:
+  - sudo apt-get update
+  - echo 'DOCKER_OPTS="-H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock -s devicemapper"' | sudo tee /etc/default/docker > /dev/null
+  - sudo service docker restart
+  - sleep 5
+  - sudo docker pull davidva/unibuild-28
 script:
 - "docker run -v $(pwd):/root/enjoy --cap-add=SYS_ADMIN davidva/unibuild-28 /bin/sh "rm -f urpms; rm -f urpms; wget -c https://raw.githubusercontent.com/kuboosoft/united-build/master/urpms; chmod a+x urpms; /urpms -g UnitedRPMs/mpv -s mpv.spec -r true -d 'dist .fc28' -c true"
 notifications:
