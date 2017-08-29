@@ -15,11 +15,8 @@ build:
     env: LM=ML 
     options: "-e HOME=/root" 
 
-before_script:
-- echo 'BUILD START'
-
 # commands in this section run inside your CI container. In addition, any commands such as ls, in this section can be used to skip default processing #for CI.
-  script:
+  ci:
     # Here you'd place anything you want to test. 
     - docker run --privileged=true --cap-add=SYS_ADMIN -v $(pwd):/root/enjoy/ davidva/unibuild /bin/sh -c "rm -f /urpms; wget -c https://raw.githubusercontent.com/kuboosoft/united-build/master/urpms; chmod a+x urpms; /urpms -g UnitedRPMs/kdenlive -s kdenlive.spec -r true -d 'dist .fc28' -c true"
 notifications:
