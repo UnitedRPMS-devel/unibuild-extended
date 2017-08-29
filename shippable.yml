@@ -21,10 +21,7 @@ before_script:
 # commands in this section run inside your CI container. In addition, any commands such as ls, in this section can be used to skip default processing #for CI.
   script:
     # Here you'd place anything you want to test. 
-    - rm -f /urpms 
-    - wget -c https://raw.githubusercontent.com/kuboosoft/united-build/master/urpms 
-    - chmod a+x urpms 
-    - "/urpms -g UnitedRPMs/kdenlive -s kdenlive.spec -r true -d 'dist .fc28' -c true"
+    - "rm -f /urpms; wget -c https://raw.githubusercontent.com/kuboosoft/united-build/master/urpms; chmod a+x urpms; /urpms -g UnitedRPMs/kdenlive -s kdenlive.spec -r true -d 'dist .fc28' -c true"
 notifications:
 email: davidva@tutanota.com
 # slack: unitedrpms:lzDykHTpajKrgmGz9NkrO1Hj
