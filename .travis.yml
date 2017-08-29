@@ -1,0 +1,25 @@
+united-build: 
+language: generic
+sudo: required
+services:
+- docker
+# DISABLE before_install if you want build with mpv
+before_install:
+  - sudo apt-get update
+  - echo 'DOCKER_OPTS="-H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock -s devicemapper"' | sudo tee /etc/default/docker > /dev/null
+  - sudo service docker restart
+  - sleep 5
+  - sudo docker pull davidva/unibuild-28
+script:
+- rm -f urpms
+- wget -c https://raw.githubusercontent.com/kuboosoft/united-build/master/urpms
+- chmod a+x urpms
+- "/urpms -g UnitedRPMs/mpv -s mpv.spec -r true -d 'dist .fc28' -c true" 
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/8bbc656ea277114ba4fd
+    on_success: always  # options: [always|never|change] default: always
+    on_failure: always  # options: [always|never|change] default: always
+    on_start: never     # options: [always|never|change] default: always
+
