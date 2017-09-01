@@ -10,7 +10,7 @@ before_install:
   - sleep 5
   - sudo docker pull davidva/unibuild-28
 script:
-- docker run -v $(pwd):/root/enjoy --cap-add=SYS_ADMIN davidva/unibuild-28 /bin/sh -c "rm -f urpms && wget -c https://raw.githubusercontent.com/kuboosoft/united-build/master/urpms && chmod a+x urpms && /urpms -g UnitedRPMs/minidlna -s minidlna.spec -r true -d 'dist .fc28' -c true"
+- docker run -v $(pwd):/root/enjoy --cap-add=SYS_ADMIN davidva/unibuild-28 /bin/sh -c "rm -f urpms && wget -c https://raw.githubusercontent.com/kuboosoft/united-build/master/urpms && chmod a+x urpms && /urpms -g UnitedRPMs/libmp3splt -s libmp3splt.spec -r true -d 'dist .fc28' -c true"
 notifications:
   webhooks:
     urls:
