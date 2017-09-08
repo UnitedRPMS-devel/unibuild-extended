@@ -4,7 +4,7 @@ jobs:
     docker: 
       - image: davidva/unibuild-28
     working_directory: /home/ubuntu/build
-    no_output_timeout: 30m
+    no_output_timeout: 40m
     steps:
       - checkout
       - run: rm -f urpms
