@@ -11,6 +11,11 @@ before_install:
   - sudo docker pull davidva/unibuild-28
 script:
 - docker run -v $(pwd):/root/enjoy --cap-add=SYS_ADMIN davidva/unibuild-28 /bin/sh -c "rm -f urpms && wget -c https://raw.githubusercontent.com/kuboosoft/united-build/master/urpms && chmod a+x urpms && /urpms -g UnitedRPMs/libopenshot -s libopenshot.spec -r true -d 'dist .fc28'"
+global:
+    - CI_NODE_TOTAL=2
+  matrix:
+    - CI_NODE_INDEX=0
+    - CI_NODE_INDEX=1
 notifications:
   webhooks:
     urls:
