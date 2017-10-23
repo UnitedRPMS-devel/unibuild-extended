@@ -8,7 +8,7 @@ RUN rm -rf united-build \
 && cp -f urpms / \
 && chmod a+x urpms \
 && chmod a+x /urpms \
-&& ./urpms -g UnitedRPMs/opera -s opera.spec -r true -d 'dist .fc25' -c true -u true   
+&& ./urpms -g UnitedRPMs/tvheadend -s tvheadend.spec -r true -d 'dist .fc25' -c true -u true   
 CMD ["/bin/bash", "/usr/bin/bash"]
 
 
