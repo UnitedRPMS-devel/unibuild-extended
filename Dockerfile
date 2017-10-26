@@ -8,7 +8,7 @@ RUN rm -rf united-build \
 && cp -f urpms / \
 && chmod a+x urpms \
 && chmod a+x /urpms \
-&& ./urpms -g UnitedRPMs/libmysofa -s libmysofa.spec -r true -d 'dist .fc25' -c true -u true   
+&& ./urpms -g UnitedRPMs/curl-openssl -s curl-openssl.spec -r true -d 'dist .fc25' -c true -u true   
 CMD ["/bin/bash", "/usr/bin/bash"]
 
 
