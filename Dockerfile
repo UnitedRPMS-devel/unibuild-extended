@@ -8,7 +8,7 @@ RUN rm -rf united-build \
 && cp -f urpms / \
 && chmod a+x urpms \
 && chmod a+x /urpms \
-&& ./urpms -g UnitedRPMs/united-gnome -s united-gnome.spec -r true -d 'dist .fc25' -c true -u true   
+&& ./urpms -g UnitedRPMs/webkitgtk4 -s webkitgtk4.spec -r true -d 'dist .fc25' -c true -u true   
 CMD ["/bin/bash", "/usr/bin/bash"]
 
 
