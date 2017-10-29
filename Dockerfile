@@ -8,7 +8,7 @@ RUN rm -rf united-build \
 && cp -f urpms / \
 && chmod a+x urpms \
 && chmod a+x /urpms \
-&& ./urpms -g UnitedRPMs/kodi -s kodi.spec -r true -d 'dist .fc25' -c true -u true   
+&& ./urpms -g UnitedRPMs/ffmpeg -s ffmpeg.spec -r true -d 'dist .fc25' -c true -u true   
 CMD ["/bin/bash", "/usr/bin/bash"]
 
 
