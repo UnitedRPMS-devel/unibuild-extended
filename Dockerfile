@@ -8,7 +8,7 @@ RUN rm -rf united-build \
 && cp -f urpms / \
 && chmod a+x urpms \
 && chmod a+x /urpms \
-&& ./urpms -g UnitedRPMs/opera -s opera.spec -r true -d 'dist .fc28' -c true    
+&& ./urpms -g UnitedRPMs/opera -s opera.spec -r true -d 'dist .fc28'     
 CMD ["/bin/bash", "/usr/bin/bash"]
 
 
