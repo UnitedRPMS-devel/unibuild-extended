@@ -17,7 +17,6 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test
 notify:
   webhooks:
     # A list of hook hashes, containing the url field
