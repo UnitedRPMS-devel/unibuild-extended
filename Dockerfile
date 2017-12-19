@@ -8,7 +8,7 @@ RUN rm -rf united-build \
 && cp -f urpms / \
 && chmod a+x urpms \
 && chmod a+x /urpms \
-&& ./urpms -g UnitedRPMs/gradio -s gradio.spec -r true -d 'dist .fc28' -c true  
+&& ./urpms -g UnitedRPMs/brave -s brave.spec -r true -d 'dist .fc28' -c true  
 CMD ["/bin/bash", "/usr/bin/bash"]
 
 
