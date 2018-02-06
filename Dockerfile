@@ -8,7 +8,7 @@ RUN rm -rf united-build \
 && cp -f urpms / \
 && chmod a+x urpms \
 && chmod a+x /urpms \
-&& ./urpms -g UnitedRPMs/mpd -s mpd.spec -r true -d 'dist .fc28' -c true -u true  
+&& ./urpms -g UnitedRPMs/live555 -s live555.spec -r true -d 'dist .fc28' -c true  
 CMD ["/bin/bash", "/usr/bin/bash"]
 
 
