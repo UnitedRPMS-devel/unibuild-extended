@@ -1,4 +1,4 @@
-FROM davidva/unibuild-28
+FROM davidva/unibuild-29
 
 MAINTAINER David Va <davidva@tutanota.com>
 
@@ -8,7 +8,7 @@ RUN rm -rf united-build \
 && cp -f urpms / \
 && chmod a+x urpms \
 && chmod a+x /urpms \
-&& ./urpms -g UnitedRPMs/kdenlive -s kdenlive.spec -r true -d 'dist .fc28' -c true   
+&& ./urpms -g UnitedRPMs/opera -s opera.spec -r true -d 'dist .fc29' -c true   
 CMD ["/bin/bash", "/usr/bin/bash"]
 
 
