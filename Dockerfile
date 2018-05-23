@@ -1,4 +1,4 @@
-FROM davidva/unibuild-29
+FROM davidva/unibuild-27
 
 MAINTAINER David Va <davidva@tutanota.com>
 
@@ -8,7 +8,7 @@ RUN rm -rf united-build \
 && cp -f urpms / \
 && chmod a+x urpms \
 && chmod a+x /urpms \
-&& ./urpms -g UnitedRPMs/spotify-client -s spotify-client.spec -r true -d 'dist .fc29' -c true   
+&& ./urpms -g UnitedRPMs/gstreamer1 -s gstreamer1.spec -r true -d 'dist .fc27' -c true   
 CMD ["/bin/bash", "/usr/bin/bash"]
 
 
